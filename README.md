@@ -1,7 +1,8 @@
-1. clone this repo and  run  mvn clean install
-2. create a spring boot project
+1. clone this repo and  run  mvn clean install 
+2. Note : This plugin uses lombok for Getter setter AllArgs and NoArgs constructor . You need to add Lombok in your classpath for spring boot project
+3. create a spring boot project
 
-2. add .json file in the below format in src/main/resources path :
+4. add .json file in the below format in src/main/resources path :
    ```{
    "classPath": "src/main/java/com/tw/demo_pulgin/model",
    "className": "College.java",
@@ -25,7 +26,7 @@
    }
    ```
 
-3. Add this to your plugin section of the spring boot project :
+5. Add this to your plugin section of the spring boot project :
    ```
    <plugin>
     <groupId>com.example</groupId>
@@ -43,5 +44,5 @@
    </plugin>
    ```
 
-4. run mvn clean compile
+6. run mvn clean compile
    

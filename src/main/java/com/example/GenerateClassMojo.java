@@ -133,17 +133,17 @@ public class GenerateClassMojo extends AbstractMojo {
     }
 
     private TypeName getSimpleType(String type) {
-        switch (type) {
-            case "String": return ClassName.get(String.class);
-            case "Integer": return ClassName.get(Integer.class);
-            case "int": return TypeName.INT;
-            case "Long": return ClassName.get(Long.class);
-            case "long": return TypeName.LONG;
-            case "Boolean": return ClassName.get(Boolean.class);
-            case "boolean": return TypeName.BOOLEAN;
-            case "Double": return ClassName.get(Double.class);
-            case "double": return TypeName.DOUBLE;
-            default: return ClassName.bestGuess(type);
-        }
+        return switch (type) {
+            case "String" -> ClassName.get(String.class);
+            case "Integer" -> ClassName.get(Integer.class);
+            case "int" -> TypeName.INT;
+            case "Long" -> ClassName.get(Long.class);
+            case "long" -> TypeName.LONG;
+            case "Boolean" -> ClassName.get(Boolean.class);
+            case "boolean" -> TypeName.BOOLEAN;
+            case "Double" -> ClassName.get(Double.class);
+            case "double" -> TypeName.DOUBLE;
+            default -> ClassName.bestGuess(type);
+        };
     }
 }
